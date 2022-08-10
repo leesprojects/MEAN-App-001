@@ -1,0 +1,10 @@
+mat-card {
+  width: 50%;
+  margin: auto;
+  top: 30%;
+  background-color: rgba(173, 216, 230, 0.438);
+}
+mat-card mat-form-field,
+mat-card textarea {
+  width: 100%;
+}/*# sourceMappingURL=post-create-component.css.map */
