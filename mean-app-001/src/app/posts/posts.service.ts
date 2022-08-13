@@ -28,8 +28,12 @@ export class PostsService {
 
   addPost(title: string, content: string){
     const post: Post = { id: '', title: title, content: content}
-    this.posts.push(post);
-    this.postsUpdated.next([...this.posts]);//Omits a new copy of this posts after update
+    this.httpClient.post<{message: string, }>("http://localhost:3000/api/posts", post)
+    .subscribe((responseData) => { //On Success
+      console.log(responseData.message);
+      this.posts.push(post); //update local data
+      this.postsUpdated.next([...this.posts]);//Omits a new copy of this posts after update
+    });
   }
 }
 

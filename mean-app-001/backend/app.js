@@ -1,8 +1,12 @@
 //REST App
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express(); //function call returns a New express app
 console.log("backend/app.js called");
+
+app.use(bodyParser.json()); //Return a middleware for parsing JSON data
+app.use(bodyParser.urlencoded( {extended: false} ));
 
 app.use((req, res, next) => {
   console.log("backend/app.js | Set: Headers");
@@ -21,7 +25,15 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/posts', (req, res, next) => { //targeting only posts
+app.post("/api/posts", (req, res, next) => { //Route: Get newly created post
+  const post = req.body;
+  console.log(post);
+  res.status(201).json({ //Don't use next() because this is a response
+    message: 'Post created successfully',
+  }); //201 means OK and new resource added
+})
+
+app.get('/api/posts', (req, res, next) => { //Route: Get stored posts
   console.log("backend/app.js | Called: Get Posts");
   const posts = [
     { id: 'id123',
@@ -32,11 +44,11 @@ app.use('/api/posts', (req, res, next) => { //targeting only posts
     content: 'Another message from the server'}
   ]
 
-  res.status(200).json({
+  res.status(200).json({ //200 means OK
     message: 'Posts fetched successfully',
     posts: posts
   });
-  res.status(404).json({
+  res.status(404).json({ //404 means Not OK: Missing
     message: 'Posts fetched unsuccessfully',
   });
 });
