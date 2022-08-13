@@ -1,12 +1,22 @@
 //REST App
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const Post = require('./models/post')
 
 const app = express(); //function call returns a New express app
 console.log("backend/app.js called");
 
+mongoose.connect("mongodb+srv://Lee:m32RrmtcOk0M0Lvb@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
+ .then(() => {
+  console.log("Connected to MonogDB successful");
+ })
+ .catch(() => {
+  console.log("Connected to MonogDB failed");
+ })
+
 app.use(bodyParser.json()); //Return a middleware for parsing JSON data
-app.use(bodyParser.urlencoded( {extended: false} ));
 
 app.use((req, res, next) => {
   console.log("backend/app.js | Set: Headers");
@@ -22,19 +32,27 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PATCH, DELETE, OPTIONS"
     );
+    console.log("backend/app.js | Set: Headers | Complete");
     next();
 });
 
-app.post("/api/posts", (req, res, next) => { //Route: Get newly created post
-  const post = req.body;
+app.post('/api/posts', (req, res, next) => { //Route: Get newly created post
+  console.log("backend/app.js | app.post ('/api/posts') | Called");
+  const post = new Post({
+    id: null,
+    title: req.body.title,
+    content: req.body.content
+  });
+  post.save(); //Mongoose allows us to use save(); which creates a DB query and enter it
   console.log(post);
   res.status(201).json({ //Don't use next() because this is a response
     message: 'Post created successfully',
   }); //201 means OK and new resource added
+  console.log("backend/app.js | app.post ('/api/posts') | Complete");
 })
 
 app.get('/api/posts', (req, res, next) => { //Route: Get stored posts
-  console.log("backend/app.js | Called: Get Posts");
+  console.log("backend/app.js | app.get ('/api/posts') | Called");
   const posts = [
     { id: 'id123',
     title: 'First server-side post',
@@ -48,9 +66,8 @@ app.get('/api/posts', (req, res, next) => { //Route: Get stored posts
     message: 'Posts fetched successfully',
     posts: posts
   });
-  res.status(404).json({ //404 means Not OK: Missing
-    message: 'Posts fetched unsuccessfully',
-  });
+
+  console.log("backend/app.js | app.get ('/api/posts') | Finished");
 });
 
 module.exports = app; // Export the express app with all middlewares
