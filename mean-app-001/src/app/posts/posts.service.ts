@@ -9,14 +9,15 @@ export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();//Payload = list of posts
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {}
 
-  }
-
-  getPosts(){ //http.get automatically converts JSON
-    this.httpClient.get<{message: string, post: Post[]}>('http:/localhost:3000/api/posts') //Needs an observable
-      .subscribe((postData) => {
-        this.posts = postData.post;
+  getPosts() {
+    this.httpClient
+      .get<{ message: string; posts: Post[] }>(
+        "http://localhost:3000/api/posts"
+      )
+      .subscribe(postData => {
+        this.posts = postData.posts;
         this.postsUpdated.next([...this.posts]);
       });
   }
