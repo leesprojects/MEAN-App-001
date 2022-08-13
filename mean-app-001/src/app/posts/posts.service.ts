@@ -27,7 +27,7 @@ export class PostsService {
   }
 
   addPost(title: string, content: string){
-    const post: Post = { id: '', title: title, content: content}
+    const post: Post = { id: null, title: title, content: content}
     this.httpClient.post<{message: string, }>("http://localhost:3000/api/posts", post)
     .subscribe((responseData) => { //On Success
       console.log(responseData.message);
@@ -36,7 +36,6 @@ export class PostsService {
     });
   }
 }
-
 
 //Subjects can be actively triggered from code i.e. this.postsUpdated.next();
 //Observables are passively triggered by wraps callback, events...
