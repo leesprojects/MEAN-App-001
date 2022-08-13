@@ -7,14 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'
 import { MatExpansionModule } from '@angular/material/expansion'
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-
 import { PostCreateComponent } from './posts/post-create/post-create.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { PostListComponent } from './posts/post-list/post-list.component';
 
 @NgModule({
@@ -35,8 +34,9 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatToolbarModule,
     MatIconModule,
     MatExpansionModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [], //Can put the service here, or make it @injectable
   bootstrap: [AppComponent]
 })
 export class AppModule { }
