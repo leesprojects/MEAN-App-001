@@ -19,7 +19,7 @@ mongoose.connect("mongodb+srv://Lee:m32RrmtcOk0M0Lvb@mean-app-001-db.uyxp3be.mon
 app.use(bodyParser.json()); //Return a middleware for parsing JSON data
 
 app.use((req, res, next) => {
-  console.log("backend/app.js | Set: Headers");
+  //console.log("backend/app.js | Set: Headers");
   res.setHeader(
     'Access-Control-Allow-Origin',
      '*' //Allow all domains to access
@@ -32,12 +32,12 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PATCH, DELETE, OPTIONS"
     );
-    console.log("backend/app.js | Set: Headers | Complete");
+    //console.log("backend/app.js | Set: Headers | Complete");
     next();
 });
 
 app.post('/api/posts', (req, res, next) => { //Route: Get newly created post
-  console.log("backend/app.js | app.post ('/api/posts') | Called");
+  //console.log("backend/app.js | app.post ('/api/posts') | Called");
   const post = new Post({
     id: null,
     title: req.body.title,
@@ -48,26 +48,28 @@ app.post('/api/posts', (req, res, next) => { //Route: Get newly created post
   res.status(201).json({ //Don't use next() because this is a response
     message: 'Post created successfully',
   }); //201 means OK and new resource added
-  console.log("backend/app.js | app.post ('/api/posts') | Complete");
+  //console.log("backend/app.js | app.post ('/api/posts') | Complete");
 })
 
 app.get('/api/posts', (req, res, next) => { //Route: Get stored posts
-  console.log("backend/app.js | app.get ('/api/posts') | Called");
-  const posts = [
-    { id: 'id123',
-    title: 'First server-side post',
-    content: 'Message from the server'},
-    { id: 'id1234',
-    title: 'Second server-side post',
-    content: 'Another message from the server'}
-  ]
-
-  res.status(200).json({ //200 means OK
-    message: 'Posts fetched successfully',
-    posts: posts
-  });
-
-  console.log("backend/app.js | app.get ('/api/posts') | Finished");
+  //console.log("backend/app.js | app.get ('/api/posts') | Called");
+  Post.find().then(documents => { //If documents recieved then
+      res.status(200).json({ //200 means OK
+        message: 'Posts fetched | Success',
+        posts: documents
+      });
+    });
+  //console.log("backend/app.js | app.get ('/api/posts') | Finished");
 });
+
+//.then() only run if success
+
+app.delete("/api/posts/:id", (req, res, next) => {
+  console.log(req.params.id);
+  Post.deleteOne({ _id: req.params.id }).then(result => {
+    console.log(result);
+    res.status(200).json({message: "Post deleted!"});
+  });
+}); //Delete by ID
 
 module.exports = app; // Export the express app with all middlewares
