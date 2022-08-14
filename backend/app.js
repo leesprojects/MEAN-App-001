@@ -43,11 +43,14 @@ app.post('/api/posts', (req, res, next) => { //Route: Get newly created post
     title: req.body.title,
     content: req.body.content
   });
-  post.save(); //Mongoose allows us to use save(); which creates a DB query and enter it
-  console.log(post);
-  res.status(201).json({ //Don't use next() because this is a response
-    message: 'Post created successfully',
-  }); //201 means OK and new resource added
+
+  post.save().then(resultPost => { //Mongoose allows us to use save(); which creates a DB query and enter it
+    console.log(resultPost);
+    res.status(201).json({ //Don't use next() because this is a response
+      message: 'Post created successfully',
+      postId: resultPost._id,
+    }); //201 means OK and new resource added
+  });
   //console.log("backend/app.js | app.post ('/api/posts') | Complete");
 })
 

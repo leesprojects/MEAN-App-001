@@ -36,14 +36,15 @@ export class PostsService {
   }
 
   addPost(title: string, content: string){
-    const post: Post = {
+    const post: Post = { //TS Objects are reference types, so updaing the id later, doesn't affect this object, only the reference to id
       id: "",
       title: title,
       content: content}
 
-    this.httpClient.post<{message: string, }>("http://localhost:3000/api/posts", post)
+    this.httpClient.post<{message: string, postId: string}>("http://localhost:3000/api/posts", post)
     .subscribe((responseData) => { //On Success
-      console.log(responseData.message);
+      const Id = responseData.postId;
+      post.id = Id;
       this.posts.push(post); //update local data
       this.postsUpdated.next([...this.posts]);//Omits a new copy of this posts after update
     });
@@ -52,18 +53,11 @@ export class PostsService {
   deletePost(postId: string){
     this.httpClient.delete("http://localhost:3000/api/posts/" + postId)
       .subscribe(() => {
-        const updatedPosts = this.posts.filter(post => { //For each post in arr
-          post.id != postId; //Delete the selected from the array to match the DB
-          this.posts = updatedPosts;
-          this.postsUpdated.next([...this.posts])
-        });
-        console.log("Post deleted");
+        this.posts = this.posts.filter(post => post.id !== postId) //For each post in arr, Delete the selected from the array to match the DB
+        this.postsUpdated.next([...this.posts]) //Go to the next post and send a copy of this newly updated postsUpdated array
       });
   }
 
 }
-
-
-
 //Subjects can be actively triggered from code i.e. this.postsUpdated.next();
 //Observables are passively triggered by wraps callback, events...
