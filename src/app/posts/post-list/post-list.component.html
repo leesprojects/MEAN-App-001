@@ -1,15 +1,19 @@
+
+<div class="postsContainer">
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel *ngFor="let post of posts ">
     <mat-expansion-panel-header>
       {{ post.title }}
     </mat-expansion-panel-header>
-    <p>{{post.content}}</p>
+    <p>{{ post.content }}</p>
     <mat-action-row>
       <button
       mat-button
+      class="postContainer"
       color="primary">Edit</button>
       <button
       mat-button
+      class="postContainer"
       color="warn"
       (click)="onDelete(post.id)">Delete</button>
     </mat-action-row>
@@ -17,3 +21,4 @@
 </mat-accordion>
 
 <p *ngIf="posts.length <= 0">Sad, no posts have been added yet</p>
+</div>
