@@ -14,7 +14,7 @@ export class PostCreateComponent {
 
   constructor(public postsService: PostsService ) {}
 
-  onAddPost(form: NgForm){
+  onSavePost(form: NgForm){
     if(form.invalid){
       return;
     }
