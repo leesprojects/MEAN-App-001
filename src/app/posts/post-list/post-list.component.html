@@ -7,10 +7,11 @@
     </mat-expansion-panel-header>
     <p>{{ post.content }}</p>
     <mat-action-row>
-      <button
+      <a
       mat-button
       class="postContainer"
-      color="primary">Edit</button>
+      color="primary"
+      [routerLink]="['/edit', post.id]">Edit</a>
       <button
       mat-button
       class="postContainer"

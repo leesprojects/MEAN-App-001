@@ -1,15 +1,15 @@
 <mat-card>
-  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm">
     <mat-form-field>
       <input
         matInput
         type="text"
         name="title"
-        ngModel
+        [ngModel]="post.title"
         required
         placeholder="Title"
         #title="ngModel">
-        <mat-error *ngIf="title.invalid">{{"Please enter a valid post title"}}</mat-error>
+        <mat-error *ngIf="title.invalid">"Please enter a valid post title"</mat-error>
         <!--* means structural directive, and ng for all elements rendered in a dom-->
         <!--String Interpolation {{ TS-Variable-Name }}-->
     </mat-form-field>
@@ -18,16 +18,16 @@
         matInput
         type="text"
         name="content"
-        ngModel
+        [ngModel]="post.content"
         required
         placeholder="Message"
         #content="ngModel">
-        <mat-error *ngIf="title.invalid">{{"Please enter some content"}}</mat-error>
+        <mat-error *ngIf="title.invalid">"Please enter some content"</mat-error>
     </mat-form-field>
     <button
       mat-raised-button
       color="primary"
-      type="submit">Post</button>
+      type="submit">Save Post</button>
   </form>
 
 </mat-card>
