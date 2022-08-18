@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const Post = require('./models/post')
+const postsRoutes = require("./routes/posts");
 
 const app = express(); //function call returns a New express app
 console.log("backend/app.js called");
@@ -36,56 +36,6 @@ app.use((req, res, next) => {
     next();
 });
 
-//Serve-side routing, de-coupled from client-side
-app.post('/api/posts', (req, res, next) => { //Route: Get newly created post
-  //console.log("backend/app.js | app.post ('/api/posts') | Called");
-  const post = new Post({
-    id: null,
-    title: req.body.title,
-    content: req.body.content
-  });
-
-  post.save().then(resultPost => { //Mongoose allows us to use save(); which creates a DB query and enter it
-    console.log(resultPost);
-    res.status(201).json({ //Don't use next() because this is a response
-      message: 'Post created successfully',
-      postId: resultPost._id,
-    }); //201 means OK and new resource added
-  });
-  //console.log("backend/app.js | app.post ('/api/posts') | Complete");
-})
-
-app.get('/api/posts', (req, res, next) => { //Route: Get stored posts
-  //console.log("backend/app.js | app.get ('/api/posts') | Called");
-  Post.find().then(documents => { //If documents recieved then
-      res.status(200).json({ //200 means OK
-        message: 'Posts fetched | Success',
-        posts: documents
-      });
-    });
-  //console.log("backend/app.js | app.get ('/api/posts') | Finished");
-});
-
-//.then() only run if success
-
-app.put("api/posts/:id", (req, res, next) => {
-  const post = new Post({
-    _id: req.body.id,
-    title: req.body.title,
-    content: req.body.content
-  })
-  Post.updateOne({_id: req.params.id}, post).then(result =>{
-    console.log(result);
-    res.status(200).json({message: 'Update successful'});
-  });
-});
-
-app.delete("/api/posts/:id", (req, res, next) => {
-  console.log(req.params.id);
-  Post.deleteOne({ _id: req.params.id }).then(result => {
-    console.log(result);
-    res.status(200).json({message: "Post deleted!"});
-  });
-}); //Delete by ID
+app.use("/api/posts", postsRoutes); //Only requests with api/posts will be sent here
 
 module.exports = app; // Export the express app with all middlewares
