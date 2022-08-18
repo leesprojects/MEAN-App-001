@@ -36,6 +36,7 @@ app.use((req, res, next) => {
     next();
 });
 
+//Serve-side routing, de-coupled from client-side
 app.post('/api/posts', (req, res, next) => { //Route: Get newly created post
   //console.log("backend/app.js | app.post ('/api/posts') | Called");
   const post = new Post({

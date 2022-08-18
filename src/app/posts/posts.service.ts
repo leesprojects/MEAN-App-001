@@ -35,6 +35,10 @@ export class PostsService {
     return this.postsUpdated.asObservable(); //Can ommit but not emmit
   }
 
+  getPost(id: string) {
+    return {...this.posts.find(p => p.id === id)}; //Check if post id = search id
+  }
+
   addPost(title: string, content: string){
     const post: Post = { //TS Objects are reference types, so updaing the id later, doesn't affect this object, only the reference to id
       id: "",

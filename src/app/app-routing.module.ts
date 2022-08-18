@@ -5,7 +5,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
-  { path: 'create', component: PostCreateComponent }
+  { path: 'create', component: PostCreateComponent },
+  { path: 'edit/:postId', component: PostCreateComponent },
 ];
 
 @NgModule({
@@ -13,3 +14,5 @@ const routes: Routes = [
   exports: [RouterModule] //Export the selected routes in the app root
 })
 export class AppRoutingModule { }
+
+//These are all client-side Angular nodes, the server ones are separate
