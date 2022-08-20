@@ -6,4 +6,4 @@ import { Component } from "@angular/core";
   styleUrls: ['./flashcards-dashboard.component.css']
 })
 
-export class FlashcardDashboard {}
+export class FlashcardDashboardComponent {}
