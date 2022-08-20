@@ -35,6 +35,7 @@
   </mat-drawer>
 </mat-drawer-container>
 
+<!--Navbar dropdowns-->
 <ng-template #posts>
   <div class="cdkMenu">
     <a mat-button cdkMenuItem routerLink="/post-list" routerLinkActive="mat-primary">View Posts</a>
@@ -44,7 +45,8 @@
 
 <ng-template #flashcards>
   <div class="cdkMenu">
-    <a mat-button cdkMenuItem routerLink="/flashcards" routerLinkActive="mat-primary">View Flashcards</a>
+    <a mat-button cdkMenuItem routerLink="/flashcards" routerLinkActive="mat-primary">Dashboard</a>
+    <a mat-button cdkMenuItem routerLink="/flashcards-view" routerLinkActive="mat-primary">View Flashcards</a>
     <a mat-button cdkMenuItem routerLink="/flashcards-create" routerLinkActive="mat-primary">Create Flashcard</a>
   </div>
 </ng-template>

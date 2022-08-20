@@ -20,7 +20,7 @@ import { HeaderComponent }          from './header/header.component';
 import { AppDashboard }             from './app-dashboard/app-dashboard.component';
 import { PostCreateComponent }      from './posts/post-create/post-create.component';
 import { PostListComponent }        from './posts/post-list/post-list.component';
-import { FlashcardDashboard }       from './flashcards/dashboard/flashcards-dashboard.component';
+import { FlashcardDashboard }       from './flashcards/flashcards-dashboard/flashcards-dashboard.component';
 
 
 @NgModule({
