@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppDashboard } from './app-dashboard/app-dashboard.component';
+import { FlashcardDashboard } from './flashcards/dashboard/flashcards-dashboard.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 
 const routes: Routes = [
-  { path: '', component: PostListComponent },
-  { path: 'create', component: PostCreateComponent },
-  { path: 'edit/:postId', component: PostCreateComponent },
+  { path: '', component: AppDashboard },
+  { path: 'post-list', component: PostListComponent },
+  { path: 'post-create', component: PostCreateComponent },
+  { path: 'post-edit/:postId', component: PostCreateComponent },
+  { path: 'flashcards', component: FlashcardDashboard },
 ];
 
 @NgModule({

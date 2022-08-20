@@ -1,4 +1,4 @@
-
+<h1 style="text-align: center;">View Posts</h1>
 <div class="postsContainer">
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel *ngFor="let post of posts ">
@@ -11,7 +11,7 @@
       mat-button
       class="postContainer"
       color="primary"
-      [routerLink]="['/edit', post.id]">Edit</a>
+      [routerLink]="['/post-edit', post.id]">Edit</a>
       <button
       mat-button
       class="postContainer"

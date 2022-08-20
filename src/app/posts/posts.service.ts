@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Post } from "./post.model";
 import { map, Subject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 //Injectable means only one instance will be created to be shared with all components
 @Injectable({providedIn: 'root'}) //Allow this file to be accessed from the root
@@ -9,7 +10,7 @@ export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();//Payload = list of posts
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   getPosts() {
     this.httpClient
@@ -54,6 +55,7 @@ export class PostsService {
       post.id = Id;
       this.posts.push(post); //update local data
       this.postsUpdated.next([...this.posts]);//Omits a new copy of this posts after update
+      this.navToListPosts();
     });
   }
 
@@ -67,6 +69,7 @@ export class PostsService {
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
+        this.navToListPosts();
       });
   }
 
@@ -76,6 +79,10 @@ export class PostsService {
         this.posts = this.posts.filter(post => post.id !== postId) //For each post in arr, Delete the selected from the array to match the DB
         this.postsUpdated.next([...this.posts]) //Go to the next post and send a copy of this newly updated postsUpdated array
       });
+  }
+
+  navToListPosts(){
+    this.router.navigate(["/post-list"]);
   }
 
 }

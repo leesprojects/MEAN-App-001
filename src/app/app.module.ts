@@ -7,6 +7,9 @@ import { MatCardModule }            from '@angular/material/card';
 import { MatToolbarModule }         from '@angular/material/toolbar';
 import { MatIconModule }            from '@angular/material/icon'
 import { MatExpansionModule }       from '@angular/material/expansion'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatSidenavModule }         from '@angular/material/sidenav';
+
 import { CdkMenuModule }            from '@angular/cdk/menu';
 import { BrowserAnimationsModule }  from '@angular/platform-browser/animations'
 import { HttpClientModule }         from '@angular/common/http';
@@ -14,15 +17,20 @@ import { HttpClientModule }         from '@angular/common/http';
 import { AppRoutingModule }         from './app-routing.module';
 import { AppComponent }             from './app.component';
 import { HeaderComponent }          from './header/header.component';
+import { AppDashboard }             from './app-dashboard/app-dashboard.component';
 import { PostCreateComponent }      from './posts/post-create/post-create.component';
 import { PostListComponent }        from './posts/post-list/post-list.component';
+import { FlashcardDashboard }       from './flashcards/dashboard/flashcards-dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    AppDashboard,
     PostCreateComponent,
-    PostListComponent
+    PostListComponent,
+    FlashcardDashboard,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +43,10 @@ import { PostListComponent }        from './posts/post-list/post-list.component'
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    CdkMenuModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    CdkMenuModule,
     HttpClientModule,
   ],
   providers: [], //Can put the service here, or make it @injectable

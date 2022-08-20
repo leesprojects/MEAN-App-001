@@ -1,10 +1,20 @@
+a, button {
+  transform: scale(1);
+  transition-duration: 1s;
+}
+
+a:hover, button:hover {
+  background-color: rgba(139, 79, 241, 0.4941176471);
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-li {
+ul li {
   display: inline;
 }
 
@@ -15,4 +25,29 @@ a {
 
 .spacer-right {
   flex: 1 1 auto;
+}
+
+.cdkMenu {
+  background-color: #673ab7;
+}
+.cdkMenu a {
+  display: block;
+  color: white;
+}
+
+.sidenav-container {
+  position: fixed;
+  height: 100%;
+}
+.sidenav-container .sidenav-drawer {
+  width: 15em;
+  background-color: #673ab7;
+}
+.sidenav-container li {
+  display: block;
+  padding: 0.4em 0em;
+}
+.sidenav-container li button {
+  width: 100%;
+  text-align: left;
 }/*# sourceMappingURL=header.component.css.map */
