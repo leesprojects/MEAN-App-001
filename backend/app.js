@@ -8,15 +8,17 @@ const postsRoutes = require("./routes/posts");
 const app = express(); //function call returns a New express app
 console.log("backend/app.js called");
 
-mongoose.connect("mongodb+srv://Lee:m32RrmtcOk0M0Lvb@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
- .then(() => {
-  console.log("Connected to MonogDB successful");
+mongoose
+  .connect("mongodb+srv://Lee:m32RrmtcOk0M0Lvb@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
+  .then(() => {
+    console.log("Connection to MonogDB | Successful");
  })
- .catch(() => {
-  console.log("Connected to MonogDB failed");
+   .catch(() => {
+    console.log("Connection to MonogDB | Failed");
  })
 
 app.use(bodyParser.json()); //Return a middleware for parsing JSON data
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
   //console.log("backend/app.js | Set: Headers");

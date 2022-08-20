@@ -5,7 +5,6 @@ const router = express.Router();
 
 //Serve-side routing, de-coupled from client-side
 router.post('', (req, res, next) => { //Route: Get newly created post
-  console.log("router.post called")
   //console.log("backend/router.js | router.post ('/api/posts') | Called");
   const post = new Post({
     id: null,
@@ -23,9 +22,8 @@ router.post('', (req, res, next) => { //Route: Get newly created post
 })
 
 router.put("/:id", (req, res, next) => {
-  console.log("router.put called")
   const post = new Post({
-    _id: req.body.id,
+    _id: req.body.id, //Reuse existing ID otherwise it tries to generate a new one
     title: req.body.title,
     content: req.body.content
   })
@@ -36,7 +34,6 @@ router.put("/:id", (req, res, next) => {
 });
 
 router.get('', (req, res, next) => { //Route: Get stored posts
-  console.log("router.get '' called")
   //console.log("backend/router.js | router.get ('/api/posts') | Called");
   Post.find().then(documents => { //If documents recieved then
       res.status(200).json({ //200 means OK
@@ -48,7 +45,6 @@ router.get('', (req, res, next) => { //Route: Get stored posts
 });
 
 router.get("/:id", (req, res, next) => {
-  console.log("router.get ':id' called")
   Post.findById(req.params.id).then(post =>{
     if(post){
       res.status(200).json({post});

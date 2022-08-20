@@ -17,7 +17,7 @@ export class PostsService {
         "http://localhost:3000/api/posts"
       )
       .pipe(map((postData) => { //Operator from rxjs //We map because DB returns _id, whereas we use id
-        return postData.posts.map((post: { title: string; content: string; _id: string; }) => {
+        return postData.posts.map(post => {
           return {
             title: post.title,
             content: post.content,
@@ -36,7 +36,10 @@ export class PostsService {
   }
 
   getPost(id: string) {
-    return this.httpClient.get<{_id: string, title: string, content: string}>("http://localhost:3000/api/posts/" + id);
+    //return { ...this.posts.find(p => p.id === id) }; //would return the local array, we need the server
+    return this.httpClient.get
+    <{_id: string, title: string, content: string}>
+    ("http://localhost:3000/api/posts/" + id);
   }
 
   addPost(title: string, content: string){

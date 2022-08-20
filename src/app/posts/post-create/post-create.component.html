@@ -7,6 +7,7 @@
         name="title"
         [ngModel]="post?.title"
         required
+        minlength="8"
         placeholder="Title"
         #title="ngModel">
         <mat-error *ngIf="title.invalid">"Please enter a valid post title"</mat-error>
@@ -20,6 +21,7 @@
         name="content"
         [ngModel]="post?.content"
         required
+        minlength="8"
         placeholder="Message"
         #content="ngModel">
         <mat-error *ngIf="title.invalid">"Please enter some content"</mat-error>
