@@ -1,1 +1,47 @@
-<h1 style="text-align: center">Flashcards - Create</h1>
+<h1 style="text-align: center;">Create Posts</h1>
+<mat-card>
+  <form (submit)="onSaveFlashcard(flashcardForm)" #flashcardForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="subject"
+        [ngModel]="flashcard?.subject"
+        required
+        minlength="1"
+        placeholder="Subject"
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid">"Please select a valid subject"</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="title"
+        [ngModel]="flashcard?.title"
+        required
+        minlength="5"
+        placeholder="Title"
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid">"Please enter a valid post title"</mat-error>
+        <!--* means structural directive, and ng for all elements rendered in a dom-->
+        <!--String Interpolation {{ TS-Variable-Name }}-->
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="content"
+        [ngModel]="flashcard?.content"
+        required
+        minlength="5"
+        placeholder="Message"
+        #content="ngModel">
+        <mat-error *ngIf="title.invalid">"Please enter some content"</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">Save Post</button>
+  </form>
+</mat-card>

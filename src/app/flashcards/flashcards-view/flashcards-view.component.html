@@ -1,1 +1,28 @@
 <h1 style="text-align: center">Flashcards - View</h1>
+
+<div class="flashcardsContainer">
+  <mat-accordion multi="true" *ngIf="flashcards.length > 0">
+    <mat-expansion-panel *ngFor="let flashcard of flashcards ">
+      <mat-expansion-panel-header>
+        {{ flashcard.title }} subject: {{ flashcard.subject }}
+      </mat-expansion-panel-header>
+      <p>{{ flashcard.content }}</p>
+      <mat-action-row>
+        <a
+        mat-button
+        class="postContainer"
+        color="primary"
+        [routerLink]="['/flashcard-edit', flashcard.id]"
+        >Edit</a>
+        <button
+        mat-button
+        class="postContainer"
+        color="warn"
+        (click)="onDelete(flashcard.id)"
+        >Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <p *ngIf="flashcards.length <= 0">Sad, no posts have been added yet</p>
+  </div>

@@ -1,8 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Post } from "./post.model";
-import { map, Subject } from "rxjs";
-import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
+import { Injectable }     from "@angular/core";
+import { map, Subject }   from "rxjs";
+import { HttpClient }     from "@angular/common/http";
+import { Router }         from "@angular/router";
+
+import { Post }           from "./post.model";
 
 //Injectable means only one instance will be created to be shared with all components
 @Injectable({providedIn: 'root'}) //Allow this file to be accessed from the root
@@ -20,9 +21,9 @@ export class PostsService {
       .pipe(map((postData) => { //Operator from rxjs //We map because DB returns _id, whereas we use id
         return postData.posts.map(post => {
           return {
+            id: post._id,
             title: post.title,
             content: post.content,
-            id: post._id
           }
         });
       }))

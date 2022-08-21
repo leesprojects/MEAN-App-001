@@ -3,7 +3,7 @@
 
     "files.exclude": {
       "**/*.css.map": true,
-      //"**/*.css": true,
+      "**/*.css": true,
       "node_modules": true
     }
 }

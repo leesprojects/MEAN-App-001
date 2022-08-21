@@ -21,8 +21,8 @@ import { AppDashboard }                       from './app-dashboard/app-dashboar
 import { PostCreateComponent }                from './posts/post-create/post-create.component';
 import { PostListComponent }                  from './posts/post-list/post-list.component';
 import { FlashcardDashboardComponent }        from './flashcards/flashcards-dashboard/flashcards-dashboard.component';
-import { FlashcardViewComponent } from './flashcards/flashcards-view/flashcards-view.component';
-import { FlashcardCreateComponent } from './flashcards/flashcards-create/flashcard-create.component';
+import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
+import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
 
 
 @NgModule({

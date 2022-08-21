@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const postsRoutes = require("./routes/posts");
+const flashcardsRoutes = require("./routes/flashcards");
 
 const app = express(); //function call returns a New express app
-console.log("backend/app.js called");
 
 mongoose
   .connect("mongodb+srv://Lee:m32RrmtcOk0M0Lvb@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
@@ -39,5 +39,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/posts", postsRoutes); //Only requests with api/posts will be sent here
+app.use("/api/flashcards", flashcardsRoutes); //Only requests with api/posts will be sent here
 
 module.exports = app; // Export the express app with all middlewares

@@ -1,4 +1,8 @@
-## My MEAN-App-001 Setup Guide
+## Mean-app-001
+
+A MEAN web application with a bunch of custom features I use such as: flashcard memorisation for learning programming concepts and languages
+
+## My Setup Guide
 
 MEAN Setup guide following the [Udemy course by Maximillian S](https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/) generated with with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
