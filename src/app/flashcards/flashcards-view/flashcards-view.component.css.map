@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"flashcards-view.component.css"}
+{"version":3,"sources":["flashcards-view.component.scss","flashcards-view.component.css"],"names":[],"mappings":"AAAA;EACE,cAAA;EACA,YAAA;EACA,YAAA;ACCF","file":"flashcards-view.component.css"}

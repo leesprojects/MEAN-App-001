@@ -1,10 +1,17 @@
 <h1 style="text-align: center">Flashcards - View</h1>
 
 <div class="flashcardsContainer">
+  <button
+  mat-button
+  class="postContainer"
+  color="warn"
+  (click)="addDummyFlashcard()"
+  >Add Dummy Flashcard
+</button>
   <mat-accordion multi="true" *ngIf="flashcards.length > 0">
     <mat-expansion-panel *ngFor="let flashcard of flashcards ">
       <mat-expansion-panel-header>
-        {{ flashcard.title }} subject: {{ flashcard.subject }}
+        {{ flashcard.subject }} | {{ flashcard.title }}
       </mat-expansion-panel-header>
       <p>{{ flashcard.content }}</p>
       <mat-action-row>
@@ -26,3 +33,5 @@
 
   <p *ngIf="flashcards.length <= 0">Sad, no posts have been added yet</p>
   </div>
+
+

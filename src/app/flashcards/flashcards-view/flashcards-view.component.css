@@ -1,1 +1,5 @@
-/*# sourceMappingURL=flashcards-view.component.css.map */
+.flashcardsContainer {
+  display: block;
+  width: 600px;
+  margin: auto;
+}/*# sourceMappingURL=flashcards-view.component.css.map */

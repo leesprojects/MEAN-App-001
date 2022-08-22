@@ -9,6 +9,8 @@ import { MatIconModule }                      from '@angular/material/icon'
 import { MatExpansionModule }                 from '@angular/material/expansion'
 import { MatProgressSpinnerModule }           from '@angular/material/progress-spinner'
 import { MatSidenavModule }                   from '@angular/material/sidenav';
+import { MatList, MatListModule }                      from '@angular/material/list';
+
 
 import { CdkMenuModule }                      from '@angular/cdk/menu';
 import { BrowserAnimationsModule }            from '@angular/platform-browser/animations'
@@ -50,6 +52,7 @@ import { FlashcardCreateComponent }           from './flashcards/flashcards-crea
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
+    MatListModule,
     CdkMenuModule,
     HttpClientModule,
   ],

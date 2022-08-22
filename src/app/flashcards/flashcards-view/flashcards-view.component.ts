@@ -15,7 +15,7 @@ export class FlashcardViewComponent {
 
    constructor(public flashcardsService: FlashcardsService) {}
 
-   ngOnInit() { //On init get all posts
+   ngOnInit() {
     this.flashcardsService.getFlashcards();
     this.flashcardsSub = this.flashcardsService.getFlashcardUpdateListener()
       .subscribe((flashcards: Flashcard[]) => {
@@ -23,12 +23,10 @@ export class FlashcardViewComponent {
       });
    }
 
-   ManualUpdate(){
-    this.flashcardsService.getFlashcards();
-    this.flashcardsSub = this.flashcardsService.getFlashcardUpdateListener()
-      .subscribe((flashcards: Flashcard[]) => {
-        this.flashcards = flashcards;
-      });
+   addDummyFlashcard(){
+    this.flashcardsService.addFlashcard(
+      'C#', 'Dummy title', 'This is dummy content',
+    )
    }
 
    onDelete(flashcardId: string){

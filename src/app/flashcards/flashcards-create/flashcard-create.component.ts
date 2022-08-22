@@ -30,6 +30,9 @@ export class FlashcardCreateComponent {
         this.mode = 'edit';
         this.flashcardId = paramMap.get('flashcardId');
         console.log("Edit mode | Flashcard id | " + this.flashcardId);
+        console.log(paramMap.get('subject'));
+        //this.flashcard = this.flashcardService.getFlashcardLocal(this.flashcardId);
+
         this.flashcardService.getFlashcard(this.flashcardId)
           .subscribe(flashcardData => {
             this.flashcard = {

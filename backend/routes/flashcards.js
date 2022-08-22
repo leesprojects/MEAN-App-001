@@ -22,7 +22,6 @@ router.post('', (req, res, next) => {
 router.get('', (req, res, next) => {
   Flashcard.find()
     .then(documents => {
-      console.log("GET: Flashcards | Successful");
       res.status(200).json({
         message: 'Flashcards fetched | Success',
         flashcards: documents

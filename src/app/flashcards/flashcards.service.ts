@@ -19,7 +19,7 @@ export class FlashcardsService{
         "http://localhost:3000/api/flashcards"
       )
       .pipe(map((flashcardData) => {
-        return flashcardData.flashcards.map(flashcard => {
+        return flashcardData.flashcards.map((flashcard: { _id: any; subject: any; title: any; content: any; }) => {
           return {
             id: flashcard._id,
             subject: flashcard.subject,
@@ -34,10 +34,14 @@ export class FlashcardsService{
       });
   }
 
+  getFlashcardLocal(id: string){
+    return {...this.flashcards.find(p => p.id === id)};
+  }
+
   getFlashcard(id: string) {
-    return this.http.get
-    <{_id: string, subject: string, title: string, content: string}>
-    ("http://localhost:3000/api/flashcards/" + id);
+    return this.http.get<{ _id: string; subject: string; title: string; content: string }>(
+      "http://localhost:3000/api/flashcards/" + id
+    );
   }
 
   getFlashcardUpdateListener() {

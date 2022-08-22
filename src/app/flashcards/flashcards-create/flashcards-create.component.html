@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Create Posts</h1>
+<h1 style="text-align: center;">Create Flashcard</h1>
 <mat-card>
   <form (submit)="onSaveFlashcard(flashcardForm)" #flashcardForm="ngForm">
     <mat-form-field>
@@ -24,11 +24,9 @@
         placeholder="Title"
         #title="ngModel">
         <mat-error *ngIf="title.invalid">"Please enter a valid post title"</mat-error>
-        <!--* means structural directive, and ng for all elements rendered in a dom-->
-        <!--String Interpolation {{ TS-Variable-Name }}-->
     </mat-form-field>
     <mat-form-field>
-      <input
+      <textarea
         matInput
         type="text"
         name="content"
@@ -38,7 +36,9 @@
         placeholder="Message"
         #content="ngModel">
         <mat-error *ngIf="title.invalid">"Please enter some content"</mat-error>
-    </mat-form-field>
+      </textarea>
+     </mat-form-field>
+
     <button
       mat-raised-button
       color="primary"
