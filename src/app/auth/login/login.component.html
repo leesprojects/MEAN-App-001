@@ -1,0 +1,27 @@
+<mat-card>
+  <h1 style="text-align: center;">Log in</h1>
+  <form #flashcardForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="email"
+        name="email"
+        required
+        minlength="1"
+        placeholder="E-mail Address">
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        name="password"
+        required
+        minlength="5"
+        placeholder="Password">
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">Login</button>
+  </form>
+</mat-card>

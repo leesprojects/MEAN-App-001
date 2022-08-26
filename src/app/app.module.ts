@@ -1,6 +1,6 @@
 import { NgModule }                           from '@angular/core';
 import { BrowserModule }                      from '@angular/platform-browser';
-import { FormsModule }                        from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }                        from '@angular/forms';
 import { MatInputModule }                     from '@angular/material/input';
 import { MatButtonModule }                    from '@angular/material/button';
 import { MatCardModule }                      from '@angular/material/card';
@@ -25,11 +25,13 @@ import { PostListComponent }                  from './posts/post-list/post-list.
 import { FlashcardDashboardComponent }        from './flashcards/flashcards-dashboard/flashcards-dashboard.component';
 import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HeaderComponent,
     AppDashboard,
     PostCreateComponent,
@@ -42,6 +44,7 @@ import { FlashcardCreateComponent }           from './flashcards/flashcards-crea
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
