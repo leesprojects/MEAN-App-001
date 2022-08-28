@@ -1,0 +1,8 @@
+mat-card {
+  width: 30em;
+  margin: auto;
+  margin-top: 15%;
+}
+mat-card mat-form-field {
+  width: 100%;
+}/*# sourceMappingURL=register.component.css.map */

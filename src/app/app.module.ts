@@ -26,12 +26,14 @@ import { FlashcardDashboardComponent }        from './flashcards/flashcards-dash
 import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     HeaderComponent,
     AppDashboard,
     PostCreateComponent,

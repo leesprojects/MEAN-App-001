@@ -3,6 +3,7 @@ import { RouterModule, Routes }               from '@angular/router';
 
 import { AppDashboard }                       from './app-dashboard/app-dashboard.component';
 import { LoginComponent }                     from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
 import { FlashcardDashboardComponent }        from './flashcards/flashcards-dashboard/flashcards-dashboard.component';
 import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'flashcard-create',           component: FlashcardCreateComponent },
   { path: 'flashcard-edit/:flashcardId',component: FlashcardCreateComponent },
   { path: 'login',                      component: LoginComponent },
+  { path: 'register',                   component: RegisterComponent },
 ];
 
 @NgModule({

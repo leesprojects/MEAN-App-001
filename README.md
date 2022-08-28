@@ -22,11 +22,12 @@ Install [NodeJS](https://nodejs.org/en/)   //Installs NodeJS to this PC
 ## Packages
 ```
 Packages
->> npm add @angular/materials          //https://material.angular.io/
->> npm install --save express          //https://expressjs.com/
->> npm install --save -dev nodemon     //https://www.npmjs.com/package/nodemon
->> npm install --save mongoose         //https://mongoosejs.com/
->> npm install --save body-parser      //https://www.npmjs.com/package/body-parser
+>> npm add @angular/materials                     //https://material.angular.io/
+>> npm install --save express                     //https://expressjs.com/
+>> npm install --save -dev nodemon                //https://www.npmjs.com/package/nodemon
+>> npm install --save mongoose                    //https://mongoosejs.com/
+>> npm install --save mongoose-unique-validator
+>> npm install --save body-parser                 //https://www.npmjs.com/package/body-parser
 ```
 
 ## package.json updates

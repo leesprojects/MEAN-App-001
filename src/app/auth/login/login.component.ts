@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, ComponentFactoryResolver } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
   templateUrl: './login.component.html',
@@ -6,5 +7,9 @@ import { Component } from "@angular/core";
 })
 
 export class LoginComponent {
+
+  onLogin(form: NgForm){
+    console.log("Login values: " + form.value)
+  }
 
 }

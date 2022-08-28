@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const usersRoutes = require("./routes/user")
 const postsRoutes = require("./routes/posts");
 const flashcardsRoutes = require("./routes/flashcards");
 
@@ -38,7 +39,8 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use("/api/user", usersRoutes);
 app.use("/api/posts", postsRoutes); //Only requests with api/posts will be sent here
-app.use("/api/flashcards", flashcardsRoutes); //Only requests with api/posts will be sent here
+app.use("/api/flashcards", flashcardsRoutes);
 
 module.exports = app; // Export the express app with all middlewares
