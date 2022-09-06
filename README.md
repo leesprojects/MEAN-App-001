@@ -12,7 +12,7 @@ This installation document was hand-made as of 13/08/2022 as I started to get a 
 
 Install [NodeJS](https://nodejs.org/en/)   //Installs NodeJS to this PC
 ```
->> npm install -g @angular/cli          //Installs angular cli to this PC
+>> npm install -g @angular/cli
 >> ng new <<app-name>>
 >> cd <<app-name>>
 >> npm install
@@ -63,7 +63,6 @@ import { PostListComponent }                  from './posts/post-list/post-list.
 import { FlashcardDashboardComponent }        from './flashcards/flashcards-dashboard/flashcards-dashboard.component';
 import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
-
 ```
 
 
@@ -76,7 +75,7 @@ import { FlashcardCreateComponent }           from './flashcards/flashcards-crea
   @Component({
     selector: 'app-root',                          //Name of component
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']            //Can have multiple stylesheets
+    styleUrls: ['./app.component.scss']
   })
 
   export class AppComponent { }                    //Export Component to be rendered
