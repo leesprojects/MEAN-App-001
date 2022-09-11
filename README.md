@@ -28,6 +28,8 @@ Packages
 >> npm install --save mongoose                    //https://mongoosejs.com/
 >> npm install --save mongoose-unique-validator
 >> npm install --save body-parser                 //https://www.npmjs.com/package/body-parser
+>> npm install --save bcrypt                      //Hashes passwords 
+>> npm install --save jsonwebtoken                //
 ```
 
 ## package.json updates

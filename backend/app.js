@@ -3,16 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-//const usersRoutes = require("./routes/user")
+const usersRoutes = require("./routes/user")
 const postsRoutes = require("./routes/posts");
 const flashcardsRoutes = require("./routes/flashcards");
 
 const app = express(); //function call returns a New express app
 
 //If this ever fails, check the whitelisted IP's and re-list this pc
-console.log("Connecting to MongoDB | Started");
 mongoose
-  .connect("mongodb+srv://Lee:YWFPPO9zIUQnxiwG@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
+  .connect("mongodb+srv://Lee:zALOEUpEc2GO25oW@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connection to MonogDB | Successful");
  })
@@ -42,7 +41,7 @@ app.use((req, res, next) => {
     next();
 });
 
-//app.use("/api/user", usersRoutes);
+app.use("/api/user", usersRoutes);
 app.use("/api/posts", postsRoutes); //Only requests with api/posts will be sent here
 app.use("/api/flashcards", flashcardsRoutes);
 
