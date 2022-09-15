@@ -1,4 +1,4 @@
-## Mean-app-001
+## MEAN_LeesProjects
 
 A MEAN web application with a bunch of custom features I use such as: flashcard memorisation for learning programming concepts and languages
 
@@ -10,7 +10,8 @@ This installation document was hand-made as of 13/08/2022 as I started to get a 
 
 ## Initial Setup
 
-Install [NodeJS](https://nodejs.org/en/)   //Installs NodeJS to this PC
+Install [NodeJS](https://nodejs.org/en/)  
+
 ```
 >> npm install -g @angular/cli
 >> ng new <<app-name>>

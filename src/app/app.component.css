@@ -1,5 +1,6 @@
 main {
   margin-top: 1rem;
-  width: 80%;
+  width: 100%;
+  min-height: 90vh;
   margin: auto;
 }/*# sourceMappingURL=app.component.css.map */
