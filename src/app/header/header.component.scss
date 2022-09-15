@@ -1,3 +1,7 @@
+mat-toolbar {
+  height: 4vh;
+}
+
 a, button {
   transform: scale(1.0);
   transition-duration: 1s;
@@ -13,6 +17,7 @@ ul{
   list-style: none;
   padding: 0;
   margin: 0;
+  text
 
   li{
     display: inline;
@@ -39,7 +44,6 @@ a{
 
 
 .sidenav-container {
-
   position: fixed;
   height: 100%;
 
