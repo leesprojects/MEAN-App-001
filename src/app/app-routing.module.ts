@@ -1,7 +1,7 @@
 import { NgModule }                           from '@angular/core';
 import { RouterModule, Routes }               from '@angular/router';
 
-import { Portfolio }                          from './portfolio/portfolio.component';
+import { PortfolioComponent }                 from './portfolio/portfolio.component';
 import { LoginComponent }                     from './auth/login/login.component';
 import { RegisterComponent }                  from './auth/register/register.component';
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
@@ -9,9 +9,10 @@ import { FlashcardDashboardComponent }        from './flashcards/flashcards-dash
 import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
 import { PostCreateComponent }                from './posts/post-create/post-create.component';
 import { PostListComponent }                  from './posts/post-list/post-list.component';
+import { NavigationSchematicComponent } from './navigation-schematic/navigation-schematic.component';
 
 const routes: Routes = [
-  { path: '',                                 component: Portfolio },
+  { path: '',                                 component: PortfolioComponent },
   { path: 'post-list',                        component: PostListComponent },
   { path: 'post-create',                      component: PostCreateComponent },
   { path: 'post-edit/:postId',                component: PostCreateComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'flashcard-edit/:flashcardId',      component: FlashcardCreateComponent },
   { path: 'login',                            component: LoginComponent },
   { path: 'register',                         component: RegisterComponent },
+  { path: 'navigation-schematic',             component: NavigationSchematicComponent}
 ];
 
 @NgModule({

@@ -6,10 +6,4 @@ import { Component } from "@angular/core";
   styleUrls: ['./portfolio.component.css']
 })
 
-export class Portfolio {
-
-  experimentalA(){
-    console.log("Hello");
-   }
-
-}
+export class PortfolioComponent {}

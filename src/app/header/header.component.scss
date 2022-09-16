@@ -1,5 +1,9 @@
-mat-toolbar {
-  height: 4vh;
+$navbar-height: 4vh;
+$sidebar-height: $navbar-height;
+
+mat-toolbar{
+  height: $navbar-height;
+
 }
 
 a, button {
@@ -17,7 +21,6 @@ ul{
   list-style: none;
   padding: 0;
   margin: 0;
-  text
 
   li{
     display: inline;
@@ -46,6 +49,7 @@ a{
 .sidenav-container {
   position: fixed;
   height: 100%;
+  top: $sidebar-height;
 
   .sidenav-drawer {
     width: 15em;

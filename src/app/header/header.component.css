@@ -18,7 +18,7 @@ ul {
   padding: 0;
   margin: 0;
 }
-ul text li {
+ul li {
   display: inline;
 }
 
@@ -42,6 +42,7 @@ a {
 .sidenav-container {
   position: fixed;
   height: 100%;
+  top: 4vh;
 }
 .sidenav-container .sidenav-drawer {
   width: 15em;

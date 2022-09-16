@@ -1,22 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
-//Page Dimensions
-$navbar-height: 4vh;
-$fullpage-height: 100 - $navbar-height;
-$halfpage-height: $fullpage-height / 2;
-
-//Font
-$h1-size: 30px;
-$h2-size: 24px;
-$h3-size: 18px;
-$h4-size: 16px;
-$h5-size: 14px;
-$font-size: 20px;
-
-//Colours
-$color-primary: #673ab7;
-$color-primary-opposite: white;
-
+@use './assets/masterVariables' as mv; //Master Variables
 
 //App Configuration
 html, body {
@@ -35,7 +18,12 @@ body {
 }
 
 .section-halfpage {
-  height: 50vh;
+  min-height: 50vh;
+}
+
+.section-body {
+  min-height: 100%;
+  margin: 25px 25% 25px;
 }
 
 .div-centered {
@@ -50,7 +38,7 @@ body {
 }
 
 .section-header-div {
-  background-color: $color-primary;
+  background-color: mv.$color-primary;
   width: 100%;
   height: 5vh;
 
@@ -59,13 +47,8 @@ body {
   align-content: center;
 
   h2{
-    font-size: $h1-size;
-    color: $color-primary-opposite;
+    font-size: mv.$h1-size;
+    color: mv.$color-primary-opposite;
     margin: 0;
   }
-}
-
-.section-body {
-  height: 100%;
-  margin: 25px 25% 25px;
 }

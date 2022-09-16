@@ -19,7 +19,7 @@ import { HttpClientModule }                   from '@angular/common/http';
 import { AppRoutingModule }                   from './app-routing.module';
 import { AppComponent }                       from './app.component';
 import { HeaderComponent }                    from './header/header.component';
-import { Portfolio }                       from './portfolio/portfolio.component';
+import { PortfolioComponent }                 from './portfolio/portfolio.component';
 import { PostCreateComponent }                from './posts/post-create/post-create.component';
 import { PostListComponent }                  from './posts/post-list/post-list.component';
 import { FlashcardDashboardComponent }        from './flashcards/flashcards-dashboard/flashcards-dashboard.component';
@@ -27,6 +27,8 @@ import { FlashcardViewComponent }             from './flashcards/flashcards-view
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
 import { LoginComponent }                     from './auth/login/login.component';
 import { RegisterComponent }                  from './auth/register/register.component';
+import { NavigationSchematicComponent } from './navigation-schematic/navigation-schematic.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -35,12 +37,13 @@ import { RegisterComponent }                  from './auth/register/register.com
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    Portfolio,
+    PortfolioComponent,
     PostCreateComponent,
     PostListComponent,
     FlashcardDashboardComponent,
     FlashcardViewComponent,
     FlashcardCreateComponent,
+    NavigationSchematicComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { RegisterComponent }                  from './auth/register/register.com
     MatListModule,
     CdkMenuModule,
     HttpClientModule,
+    LayoutModule,
   ],
   providers: [], //Can put the service here, or make it @injectable
   bootstrap: [AppComponent]
