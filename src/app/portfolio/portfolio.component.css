@@ -19,6 +19,7 @@ mat-card .mat-card-imageholder {
 mat-card .mat-card-imageholder img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: 20px;
 }
 mat-card mat-card-title-group {
   text-align: center;
