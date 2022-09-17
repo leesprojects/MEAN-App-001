@@ -9,7 +9,6 @@ import { FlashcardDashboardComponent }        from './flashcards/flashcards-dash
 import { FlashcardViewComponent }             from './flashcards/flashcards-view/flashcards-view.component';
 import { PostCreateComponent }                from './posts/post-create/post-create.component';
 import { PostListComponent }                  from './posts/post-list/post-list.component';
-import { NavigationSchematicComponent } from './navigation-schematic/navigation-schematic.component';
 
 const routes: Routes = [
   { path: '',                                 component: PortfolioComponent },
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'flashcard-edit/:flashcardId',      component: FlashcardCreateComponent },
   { path: 'login',                            component: LoginComponent },
   { path: 'register',                         component: RegisterComponent },
-  { path: 'navigation-schematic',             component: NavigationSchematicComponent}
 ];
 
 @NgModule({

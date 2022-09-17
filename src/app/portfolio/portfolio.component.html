@@ -6,7 +6,13 @@
     the projects below have clickable icons to take you to their own sites!
   </p>
   <p>Want to see how I coded this MEAN app, check out its <a href="https://github.com/leesprojects/MEAN-LeesProjects">Github Repo</a></p>
-  <h3></h3>
+  <br>
+  <h3 style="margin:0;">Quick Links | Projects</h3>
+  <ul class="ul-minimal">
+    <a href="#WebProjects"><li>Web Development</li></a>
+    <a href="#VbaProjects"><li>VBA</li></a>
+    <a href="#GameProjects"><li>Game Development</li></a>
+  </ul>
 </section>
 
 
@@ -17,16 +23,16 @@
   </div>
   <div class="section-body">
     <div>
-      <p>
+      <p style="text-align: center;">
         Job Search Status: I am currently looking for work
-
+        <br>
         My name is Lee Stevens and I am a programmer based in London.
         I currently work as a VBA developer 3 days a week, and a solo Unity Developer for the other 4.
-
+        <br>
         Since graduating from Brunel University with a BSc in Computer Science and an MA in Game Development, to the projects at my current job,
         I've had the priviledge of experiencing programming in many different capacities.
         I'm now looking for the best learning opportunity to settle down and learn from the best.
-
+        <br>
         This website is still in development so I apologise if it's missing sections you're looking for, I'm happy to get in contact and fill in the blanks :)
       </p>
     </div>
@@ -35,12 +41,12 @@
 
 
 
-<section class="section-halfpage">
+<section class="section-halfpage" id="WebProjects">
   <div class="section-header-div">
     <h2>Web Dev Projects</h2>
   </div>
-  <div class="section-body" style="margin: 5em 5vw 5em">
-    <div class="mat-cards-3wide">
+  <div class="section-body">
+    <div class="mat-cards-flexcenter">
       <mat-card>
         <mat-card-title-group>
           <div class="mat-card-imageholder">
@@ -57,10 +63,21 @@
             <li>MongoDB</li>
             <li>SCSS</li>
           </ul>
+          <a href="https://github.com/leesprojects/MEAN-LeesProjects">Github Repo</a>
           <p>
             This web app is built with MEAN full-stack, it's essentially an all-in-one website for everything I could need at home or on the go<br>
             One sub-project is a flashcard system which I used for learning new languages and programming concepts!
           </p>
+          <div class="button-spacer">
+            <button
+              mat-raised-button
+              color="link"
+              href="">Website</button>
+            <button
+            mat-raised-button
+            color="link"
+            href="">Github</button>
+          </div>
         </mat-card-content>
       </mat-card>
       <mat-card>
@@ -86,6 +103,12 @@
             I was commissioned to use a low-code web app so in the future, less experienced developers would be able to pick it up if I left.<br>
             Although it's 'low-code', there was a lot of code involved, mainly SCSS, VBA and Java.
           </p>
+          <div class="button-spacer">
+            <button
+              mat-raised-button
+              color="link"
+              href="">Website</button>
+          </div>
         </mat-card-content>
       </mat-card>
       <mat-card>
@@ -105,9 +128,89 @@
             <li>CSS 3</li>
             <li>SCSS</li>
           </ul>
+          <a href="https://github.com/leesprojects/Portfolio-LeeStevens.xyz">Github Repo</a>
           <p>
             My first portfolio built using React.js, it was my first step in becomming a web developer<br/>
             Since then I have learned a lot including MEAN and with this new knowledge, I recreated the portfolio with Angular right here!
+          </p>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="button-spacer" style="bottom: 0;">
+            <button
+              mat-raised-button
+              color="link"
+              href="">Website</button>
+            <button
+            mat-raised-button
+            color="link"
+            href="">Github</button>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section-halfpage" id="VbaProjects">
+  <div class="section-header-div">
+    <h2>VBA Projects | Professional</h2>
+  </div>
+  <div class="section-body">
+    <div class="mat-cards-flexcenter">
+      <mat-card>
+        <mat-card-title-group>
+          <div class="mat-card-imageholder">
+            <img mat-card-lg-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/826px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png">
+          </div>
+          <mat-card-title>Litigation Calculators</mat-card-title>
+          <mat-card-subtitle>Professional Project</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <ul class="skill-tag">
+            <li>VBA</li>
+            <li>Excel</li>
+          </ul>
+          <p>
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title-group>
+          <div class="mat-card-imageholder">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/826px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png">
+          </div>
+          <mat-card-title>Case Management System</mat-card-title>
+          <mat-card-subtitle>Professional Project</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <ul class="skill-tag">
+            <li>VBA</li>
+            <li>Excel</li>
+            <li>Sharepoint</li>
+          </ul>
+          <p>
+
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title-group>
+          <div class="mat-card-imageholder">
+            <img mat-card-lg-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/826px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png">
+          </div>
+          <mat-card-title>Automated Invoicers</mat-card-title>
+          <mat-card-subtitle>Professional Project</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <ul class="skill-tag">
+            <li>VBA</li>
+            <li>Excel</li>
+            <li>Word</li>
+          </ul>
+          <p>
+
           </p>
         </mat-card-content>
       </mat-card>
@@ -117,22 +220,67 @@
 
 
 
-<section class="section-halfpage">
-  <div class="section-header-div">
-    <h2>VBA Projects</h2>
-  </div>
-  <div class="section-body">
-
-  </div>
-</section>
-
-
-
-<section class="section-halfpage">
+<section class="section-halfpage" id="GameProjects">
   <div class="section-header-div">
     <h2>Game Projects - Unity C#</h2>
   </div>
   <div class="section-body">
+    <div class="mat-cards-flexcenter">
+      <mat-card>
+        <mat-card-title-group>
+          <div class="mat-card-imageholder">
+            <img mat-card-lg-image src="/src/assets/images/wildlands/Project Wildlands - Unity Final - Main.png">
+          </div>
+          <mat-card-title>Wildlands</mat-card-title>
+          <mat-card-subtitle>MA Team Project Submission</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <ul class="skill-tag">
+            <li>C#</li>
+            <li>Unity</li>
+          </ul>
+          <p>
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title-group>
+          <div class="mat-card-imageholder">
+          <img src="https://preview.redd.it/tu3gt6ysfxq71.png?auto=webp&s=10ab55d9dc09e7ed6ea59bd5916800a5272d5969">
+          </div>
+          <mat-card-title>Codename Kaiju</mat-card-title>
+          <mat-card-subtitle>MA Dissertation Submission</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <ul class="skill-tag">
+            <li>C#</li>
+            <li>Unity</li>
+          </ul>
+          <p>
 
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title-group>
+          <div class="mat-card-imageholder">
+            <img mat-card-lg-image src="https://preview.redd.it/tu3gt6ysfxq71.png?auto=webp&s=10ab55d9dc09e7ed6ea59bd5916800a5272d5969">
+          </div>
+          <mat-card-title>Zephyr</mat-card-title>
+          <mat-card-subtitle>Personal Project</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <ul class="skill-tag">
+            <li>C#</li>
+            <li>Unity</li>
+            <li>Blender</li>
+            <li>Photoshop</li>
+          </ul>
+          <p>
+
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </section>

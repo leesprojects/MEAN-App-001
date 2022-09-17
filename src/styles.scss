@@ -6,6 +6,10 @@ html, body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -24,6 +28,7 @@ body {
 .section-body {
   min-height: 100%;
   margin: 25px 25% 25px;
+  margin: 5em 5vw 5em;
 }
 
 .div-centered {
@@ -50,5 +55,24 @@ body {
     font-size: mv.$h1-size;
     color: mv.$color-primary-opposite;
     margin: 0;
+  }
+}
+
+
+//Global CSS Classes
+ul {
+  list-style: none;
+  text-align: center;
+  font-weight: 600;
+  padding: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.button-spacer { //Attach this to a div which encases buttons
+  button {
+    margin: 1em;
   }
 }

@@ -3,6 +3,10 @@ html, body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -19,6 +23,7 @@ body {
 .section-body {
   min-height: 100%;
   margin: 25px 25% 25px;
+  margin: 5em 5vw 5em;
 }
 
 .div-centered {
@@ -44,4 +49,18 @@ body {
   font-size: 30px;
   color: white;
   margin: 0;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  font-weight: 600;
+  padding: 0;
+}
+ul a {
+  text-decoration: none;
+}
+
+.button-spacer button {
+  margin: 1em;
 }/*# sourceMappingURL=styles.css.map */

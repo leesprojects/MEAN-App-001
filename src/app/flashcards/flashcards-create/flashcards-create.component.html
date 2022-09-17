@@ -1,3 +1,4 @@
+
 <h1 style="text-align: center;">Create Flashcard</h1>
 <mat-card>
   <form (submit)="onSaveFlashcard(flashcardForm)" #flashcardForm="ngForm">
@@ -37,7 +38,7 @@
         #content="ngModel">
         <mat-error *ngIf="title.invalid">"Please enter some content"</mat-error>
       </textarea>
-     </mat-form-field>
+    </mat-form-field>
 
     <button
       mat-raised-button

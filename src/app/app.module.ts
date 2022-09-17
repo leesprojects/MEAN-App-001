@@ -27,8 +27,6 @@ import { FlashcardViewComponent }             from './flashcards/flashcards-view
 import { FlashcardCreateComponent }           from './flashcards/flashcards-create/flashcard-create.component';
 import { LoginComponent }                     from './auth/login/login.component';
 import { RegisterComponent }                  from './auth/register/register.component';
-import { NavigationSchematicComponent } from './navigation-schematic/navigation-schematic.component';
-import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -43,7 +41,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     FlashcardDashboardComponent,
     FlashcardViewComponent,
     FlashcardCreateComponent,
-    NavigationSchematicComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +60,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatListModule,
     CdkMenuModule,
     HttpClientModule,
-    LayoutModule,
   ],
   providers: [], //Can put the service here, or make it @injectable
   bootstrap: [AppComponent]
