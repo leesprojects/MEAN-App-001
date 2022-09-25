@@ -11,7 +11,7 @@ const app = express(); //function call returns a New express app
 
 //If this ever fails, check the whitelisted IP's and re-list this pc
 mongoose
-  .connect("mongodb+srv://Lee:zALOEUpEc2GO25oW@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
+  .connect("mongodb+srv://Lee:" + process.env.MONGO_ATLAS_PW +  "@mean-app-001-db.uyxp3be.mongodb.net/node-angular?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connection to MonogDB | Successful");
  })

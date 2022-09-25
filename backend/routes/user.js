@@ -1,5 +1,5 @@
 const express = require ("express");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const User = require('../models/user');
 const jwt = require("jsonwebtoken");
 
@@ -49,7 +49,7 @@ router.post("/login", (req, res, next) => {
       }
       const token = jwt.sign( //Creates a new token given an input, don't need to return password since they've already logged in
           { email: fetchedUser.email, userId: fetchedUser._id},
-          'secret_this_should_be_longer',
+          process.env.JWT_KEY,
           { expiresIn: '1h'}
         );
         console.log(token);
